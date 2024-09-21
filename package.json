@@ -4,7 +4,13 @@
   "packageManager": "pnpm@9.11.0+sha512.0a203ffaed5a3f63242cd064c8fb5892366c103e328079318f78062f24ea8c9d50bc6a47aa3567cabefd824d170e78fa2745ed1f16b132e16436146b7688f19b",
   "scripts": {
     "format": "prettier --write . && eslint --fix .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "start": "tsx --env-file .env src/index.ts"
+  },
+  "dependencies": {
+    "@date-fns/tz": "^1.0.2",
+    "date-fns": "^4.1.0",
+    "dedent": "^1.5.3"
   },
   "devDependencies": {
     "@mkizka/eslint-config": "^5.3.2",
@@ -14,7 +20,9 @@
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
-    "prettier-plugin-pkg": "^0.18.1"
+    "prettier-plugin-pkg": "^0.18.1",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2"
   },
   "lint-staged": {
     "*": [
@@ -23,6 +31,7 @@
     ]
   },
   "prettier": {
+    "printWidth": 120,
     "plugins": [
       "prettier-plugin-pkg"
     ]
