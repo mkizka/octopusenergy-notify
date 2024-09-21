@@ -19,3 +19,8 @@ jobs:
           cache: pnpm
       - run: pnpm i
       - run: pnpm start
+        env:
+          OEJP_ACCOUNT_NUMBER: ${{ secrets.OEJP_ACCOUNT_NUMBER }}
+          OEJP_EMAIL: ${{ secrets.OEJP_EMAIL }}
+          OEJP_PASSWORD: ${{ secrets.OEJP_PASSWORD }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
