@@ -17,7 +17,8 @@ const getStartOfThisMonth = () => {
 };
 
 const getRemainingDaysOfThisMonth = () => {
-  return endOfMonth(now).getDate() - now.getDate();
+  // 今日を含めた数を返す
+  return endOfMonth(now).getDate() - now.getDate() + 1;
 };
 
 const sumByKey = <T>(items: T[], key: keyof T) => {
@@ -47,14 +48,18 @@ const main = async () => {
 
   await postDiscordMessage(dedent`
     ## 昨日(${yesterday})の電力使用状況
-    ${_(result[yesterday].value)} kWh (${_(diffValue)})
-    ${_(result[yesterday].costEstimate)} 円 (${_(diffCostEstimate)})
-    ## 今日までの合計料金
+    ${_(result[yesterday].value)} kWh (前日より${_(diffValue)})
+    ${_(result[yesterday].costEstimate)} 円 (前日より${_(diffCostEstimate)})
+    ## 昨日までの合計料金
     ${_(sumCostEstimate)} 円
     ## 今月の推定料金
     ${_(sumCostEstimate)} + ${_(avgCostEstimate)} x ${remainingDays} = ${_(sumCostEstimateOfThisMonth)} 円
     ## 平均料金から推測した30日分の料金
     ${_(avgCostEstimate)} x 30 = ${_(sumCostEstimateOf30Days)} 円
+    ## デバッグ情報
+    \`\`\`
+    ${JSON.stringify(result)}
+    \`\`\`
   `);
 };
 

@@ -8,7 +8,7 @@ on:
   #   - cron: '0 6 * * *'
 
 jobs:
-  unit-test:
+  notify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
