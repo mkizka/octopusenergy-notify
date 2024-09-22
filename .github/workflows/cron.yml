@@ -2,7 +2,7 @@ name: Cron
 
 on:
   schedule:
-    - cron: "40 4 * * *"
+    - cron: "0 21 * * *" # 日本時間で6:00に実行
 
 jobs:
   notify:
