@@ -54,7 +54,7 @@ const main = async () => {
     ${_(sumCostEstimate)} 円
     ## 今月の推定料金
     ${_(sumCostEstimate)} + ${_(avgCostEstimate)} x ${remainingDays} = ${_(sumCostEstimateOfThisMonth)} 円
-    ## 平均料金から推測した30日分の料金
+    ## 30日分の推定料金
     ${_(avgCostEstimate)} x 30 = ${_(sumCostEstimateOf30Days)} 円
   `);
 };
