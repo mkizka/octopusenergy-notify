@@ -36,8 +36,7 @@ const sumCostEstimateOf30Days = avgCostEstimate * 30;
 
 await postDiscordMessage(`\
 ## 昨日(${yesterdayKey})の電力使用状況
-${_(result[yesterdayKey].value)} kWh
-${_(result[yesterdayKey].costEstimate)} 円
+${_(result[yesterdayKey].costEstimate)} 円 (${_(result[yesterdayKey].value)} kWh)
 ## 昨日までの合計料金
 ${_(sumCostEstimate)} 円
 ## 今月の推定料金
