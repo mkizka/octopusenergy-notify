@@ -76,6 +76,5 @@ export const fetchHalfHourlyReadings = async ({
   });
   const data = result.data as HalhHourlyReadingsResponse;
   const { halfHourlyReadings } = data.account.properties[0].electricitySupplyPoints[0];
-  // 昨日までの結果を使う
-  return aggrageteByDate(halfHourlyReadings.slice(0, -1));
+  return aggrageteByDate(halfHourlyReadings);
 };
